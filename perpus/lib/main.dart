@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:perpus/perpus.dart';
+import 'package:perpus/models/perpus_model.dart';
+import 'package:perpus/views/perpus_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,14 +9,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      ),
-      home: Perpus(),
+      debugShowCheckedModeBanner: false,
+      title: 'PERPUSTAKAAN',
+      initialRoute: '/Perpus',  
+      routes: {
+      '/Perpus': (context) => PerpusView(),
+      },
     );
   }
 }
